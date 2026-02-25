@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { PaisService } from './service/pais.service';
+import { PaisService } from '../service/pais.service';
 
 @Component({
   selector: 'app-pais',
