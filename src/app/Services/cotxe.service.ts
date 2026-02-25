@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Cotxe } from "../../models/Cotxe";
+import { Cotxe } from "../Models/Cotxe";
 
 
 @Injectable({

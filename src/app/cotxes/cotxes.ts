@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Cotxe } from '../models/Cotxe';
+import { Cotxe } from '../Models/Cotxe';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CotxeService } from './service/cotxe.service'
+import { CotxeService } from '../Services/cotxe.service'
 
 
 @Component({
