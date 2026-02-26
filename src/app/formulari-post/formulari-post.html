@@ -10,6 +10,7 @@
     <input type="number" [(ngModel)]="searchId" placeholder="Introdueix un ID">
     <button (click)="buscarPost()">Buscar</button>
 
+    <!-- Cos del post buscat -->
     <div *ngIf="post">
         <h3> {{ post!.title | lowercase }} </h3>
         <p> {{ post!.body | lowercase }} </p>
@@ -27,16 +28,19 @@
     
     <h2>Afegir Post</h2>
     <form [formGroup]="postForm" (ngSubmit)="afegirPost()">
-        <input formControlName="userId" placeholder="Número d'id del post" type="number" name="userId" id="userId">
+        <input formControlName="userId" placeholder="Número d'id de l'usuari que crea el post." type="number" name="userId" id="userId">
+        <!-- Missatge d'error (reactiu) -->
         <small *ngIf="userIdError" class="errorMessage">
-            L'userId ha de ser un número positiu
+            L'id de l'usuari ha de ser un número positiu
         </small>
         <input formControlName="title" placeholder="Titol del post" type="text" name="title" id="title">
+        <!-- Missatge d'error (reactiu) -->
         <small *ngIf="titleError" class="errorMessage">
             El ha de tenir mínim 5 caràcters
         </small>
         <textarea formControlName="body" placeholder="Cos del post" name="body" id="body"></textarea>
-        <small *ngIf="bodyError" class="errorMessage">
+        <!-- Missatge d'error (reactiu) -->
+        <small *ngIf="bodyError" class="errorMessage"> 
             El cos ha de tenir mínim 10 caràcters
         </small>
         <button type="submit" [disabled]="postForm.invalid" >Afegir Post</button>
