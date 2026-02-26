@@ -29,15 +29,15 @@ export class FormulariPost {
   }
 
   buscarPost() {
-    // Si l'id es null no fer cap request.
     this.postService.getPostById(this.searchId).subscribe({
       next: (post) => {
+        this.missatgeBuscar = 'Post trobat amb éxit!';
         this.post = post;
         this.cdr.detectChanges();
       },
       error: () => {
         this.missatgeBuscar = 'Error al buscar el post';
-        this.missatgeBuscar = '';
+        this.cdr.detectChanges();
       }
     });
   }
@@ -47,12 +47,12 @@ export class FormulariPost {
       const nouPost: Post = this.postForm.value;
       this.postService.addPost(nouPost).subscribe({
         next: () => {
-          this.missatgeAfegir = 'Post afegit correctament';
+          this.missatgeAfegir = 'Post afegit correctament!';
           this.cdr.detectChanges();
         },
         error: () => {
           this.missatgeAfegir = 'Error a l\'hora d\'afegir el post';
-          this.missatgeAfegir = '';
+          this.cdr.detectChanges();
         }
       });
     }

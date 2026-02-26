@@ -3,7 +3,7 @@
 <div>
     <!-- Missatge d'error i success -->
     <p *ngIf="missatgeBuscar" 
-      [class]="missatgeBuscar === 'Post afegit correctament' ? 'missatgeSuccess' : 'missatgeError'"> 
+      [class]="missatgeBuscar === 'Post trobat amb éxit!' ? 'missatgeSuccess' : 'missatgeError'"> 
         {{ missatgeBuscar }} 
     </p>
     <h2>Buscar Post</h2>
@@ -21,8 +21,8 @@
 <div>
     <!-- Missatge d'error i success -->
     <p *ngIf="missatgeAfegir" 
-      [class]="missatgeAfegir === 'Post afegit correctament' ? 'missatgeSuccess' : 'missatgeError'"> 
-        {{ missatgeBuscar }} 
+      [class]="missatgeAfegir === 'Post afegit correctament!' ? 'missatgeSuccess' : 'missatgeError'"> 
+        {{ missatgeAfegir }} 
     </p>    
     
     <h2>Afegir Post</h2>
